@@ -62,16 +62,16 @@ h1 {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-
-.menu-pic,
-.menu-info {
-    display: inline-block;
+    margin: 35px auto;
 }
 
 .menu-pic {
     font-size: 70px;
+    width: 70px;
+}
+
+.menu-info {
+    width: 300px;
 }
 
 .item-name{

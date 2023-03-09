@@ -22,6 +22,7 @@ function displayMenu() {
             </div>
             <button class="add-item-btn" id="add-item-btn">+</button>
         </div>
+        <hr>
         `
     })
     return menuInfo
