@@ -1,3 +1,6 @@
 import { menuArray } from "./data.js"
 
-console.log("set up complete")
+
+menuArray.forEach(menuItem => {
+  console.log (menuItem.name)
+})
