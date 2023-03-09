@@ -53,8 +53,12 @@ h1 {
     height: 167px;
 }
 
+/************************
+     Menu Options
+************************/
+
 .menu-items {
-    padding: 45px;
+    padding: 45px 45px 0px 45px;
 }
 
 .menu-wrapper {
@@ -67,14 +71,15 @@ h1 {
 
 .menu-pic {
     font-size: 70px;
-    width: 70px;
+    width: 100px;
 }
 
 .menu-info {
     width: 300px;
 }
 
-.item-name{
+.item-name,
+.order-details {
     font-weight: 700;
     font-size: 28px;
 }
@@ -98,4 +103,24 @@ h1 {
     border: 1px solid #dedede;
 }
 
+/************************
+     Order Details
+************************/
+
+.order-details {
+    text-align: center;
+}
+
+#complete-order{
+    background: #16DB99;
+    color: #ffffff;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    text-align: center;    
+    font-family: 'Rokkitt', serif;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+}
 

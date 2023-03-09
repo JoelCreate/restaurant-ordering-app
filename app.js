@@ -1,12 +1,5 @@
 import { menuArray } from "./data.js"
 
-
-
-// menuArray.forEach(function(menuOptions) { 
-//     const itemName = document.getElementById('item-name')
-//     console.log(menuOptions.name)
-// })
-
 function displayMenu() {
 
     let menuInfo = ``
