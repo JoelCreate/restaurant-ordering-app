@@ -13,11 +13,14 @@ function displayMenu() {
 
     menuArray.forEach(function(menuItem) {
         menuInfo += `
-        <div id="menu-pic">${menuItem.emoji}</div>
-        <div id="menu-info">
-            <div id="item-name">${menuItem.name}</div>
-            <div id="item-ingredients">${menuItem.ingredients}</div>
-            <div id="item-price">${menuItem.price}</div>
+        <div class="menu-wrapper">
+            <div class="menu-pic" id="menu-pic">${menuItem.emoji}</div>
+            <div class="menu-info" id="menu-info">
+                <div class="item-name" id="item-name">${menuItem.name}</div>
+                <div  class="item-ingredients" id="item-ingredients">${menuItem.ingredients}</div>
+                <div class="item-price" id="item-price">$${menuItem.price}</div>
+            </div>
+            <button class="add-item-btn" id="add-item-btn">+</button>
         </div>
         `
     })
