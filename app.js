@@ -1,5 +1,15 @@
 import { menuArray } from "./data.js"
 
+
+
+
+function renderMenu(){
+    document.getElementById('menu-items').innerHTML = displayMenu()
+}
+
+renderMenu()
+
+
 function displayMenu() {
 
     let menuInfo = ``
@@ -21,9 +31,12 @@ function displayMenu() {
     return menuInfo
 }
 
-function renderMenu(){
-    document.getElementById('menu-items').innerHTML = displayMenu()
-}
+document.addEventListener("click", function(){
+    document.getElementById(e.target.id).st
+})
 
-renderMenu()
+
+
+
+
 

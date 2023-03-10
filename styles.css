@@ -107,8 +107,17 @@ h1 {
      Order Details
 ************************/
 
+.order-total {
+    display: none;
+}
+
 .order-details {
     text-align: center;
+}
+
+.add-item-btn:hover {
+    cursor: pointer;
+    opacity: 0.5;
 }
 
 #complete-order{
