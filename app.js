@@ -10,6 +10,8 @@ function renderMenu(){
 renderMenu()
 
 
+// Loop through data.js and display menu item in HTML //
+
 function displayMenu() {
 
     let menuInfo = ``
@@ -34,17 +36,79 @@ function displayMenu() {
 
 // Add menu button //
 
-let addItemBtn = document.querySelectorAll('#add-item-btn')
+// function orderDetails() {
 
-addItemBtn.forEach((btn) => {
-    btn.addEventListener("click", function(e){
-        console.log(e.target.id)
+//     let addItemBtn = document.querySelectorAll('#add-item-btn')
+//     let orderInfo = ``
+
+//     addItemBtn.forEach((btn) => {
+//         btn.addEventListener("click", function(addItem){
+//             console.log(addItem.target.id)
+//             document.getElementById('order-section').classList.toggle('hidden')
+//             orderInfo += `
+//             <div class="order-details">Your Order</div>
+                
+//                 <div class="order-wrapper">
+//                     <div class="order-item">${addItem.name}/div>
+//                     <button class="remove" id="remove">remove</button>
+//                     <div class="item price">${addItem.price}</div>
+//                 <hr>
+//                     <div clas="order-total" id="order-total"></div>
+//                 </div>
+
+//                 <button id="complete-order">Complete Order</button>
+//             `
+
+//         })
+//     })  
+//     return orderInfo
+
+// }
+
+// //displayOrderDetails()
+
+// function renderOrderDetails(){
+//     document.getElementById('order-section').innerHTML = orderDetails()
+// }
+
+// renderOrderDetails()
+
+
+
+
+function displayOrder() {
+
+    let addItemBtn = document.querySelectorAll('#add-item-btn')
+    let orderInfo = ``
+
+    menuArray.forEach(function(addItem) {
+        orderInfo += `
+        <div class="order-details">Your Order</div>                        
+        <div class="order-wrapper">
+            <div class="order-item">${addItem.name}</div>
+            <button class="remove" id="remove">remove</button>
+            <div class="item price">${addItem.price}</div>
+        </div>
+            <hr>
+        <div clas="order-total" id="order-total"></div>
+        <button id="complete-order">Complete Order</button>
+        `
+        })
+        return orderInfo
+    }
+
+
+
+function renderOrderDetails(){
+
+    let addItemBtn = document.querySelectorAll('#add-item-btn')
+
+    addItemBtn.forEach((btn) => {
+        btn.addEventListener("click", function(e){
+           document.getElementById('order-section').innerHTML = displayOrder()
+        })
     })
-})
-
-
-
-
-
-
-
+}
+    
+renderOrderDetails()
+    

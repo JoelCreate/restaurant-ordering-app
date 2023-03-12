@@ -107,8 +107,10 @@ h1 {
      Order Details
 ************************/
 
-.hidden {
-    display: none;
+.order-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .order-details {
@@ -131,5 +133,12 @@ h1 {
     font-weight: 700;
     border: none;
     font-size: 16px;
+}
+
+#remove {
+    color: #bbbbbb;
+    background: none;
+    font-family: 'Rokkitt', serif;
+    border: none;
 }
 
