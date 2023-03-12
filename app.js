@@ -31,9 +31,17 @@ function displayMenu() {
     return menuInfo
 }
 
-document.addEventListener("click", function(){
-    document.getElementById(e.target.id).st
+
+// Add menu button //
+
+let addItemBtn = document.querySelectorAll('#add-item-btn')
+
+addItemBtn.forEach((btn) => {
+    btn.addEventListener("click", function(e){
+        console.log(e.target.id)
+    })
 })
+
 
 
 
