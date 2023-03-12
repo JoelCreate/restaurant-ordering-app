@@ -142,3 +142,8 @@ h1 {
     border: none;
 }
 
+#remove:hover {
+    cursor: pointer;
+    color: #cdcdcd;
+}
+
