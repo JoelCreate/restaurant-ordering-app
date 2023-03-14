@@ -2,7 +2,6 @@ import { menuArray } from "./data.js"
 
 
 
-
 function renderMenu(){
     document.getElementById('menu-items').innerHTML = displayMenu()
 }
@@ -25,7 +24,7 @@ function displayMenu() {
                 <div  class="item-ingredients" id="item-ingredients">${menuItem.ingredients}</div>
                 <div class="item-price" id="item-price">$${menuItem.price}</div>
             </div>
-            <button class="add-item-btn" id="add-item-btn">+</button>
+            <button class="add-item-btn" id="${menuItem.id}">+</button>
         </div>
         <hr>
         `
@@ -36,40 +35,50 @@ function displayMenu() {
 
 // Add menu button //
 
-function displayOrder() {   
-
+function displayOrder() {  
+    
     let orderInfo = ``
 
-    menuArray.forEach(function(addItem) {
-        orderInfo += `
-        <div class="order-details">Your Order</div>                        
+    
+    menuArray.forEach(function(orderItem) {
+        orderInfo += `                               
         <div class="order-wrapper">
-            <div class="order-item">${addItem.name}</div>
+            <div class="order-item">${orderItem.name}</div>
             <button class="remove" id="remove">remove</button>
-            <div class="item price">${addItem.price}</div>
+            <div class="item price">${orderItem.price}</div>
         </div>
-            <hr>
-        <div class="order-total" id="order-total"></div>
-        <button id="complete-order">Complete Order</button>
+            <hr>        
         `
         })    
         return orderInfo
-
+    
+    
     }
 
 
 
 function renderOrderDetails(){
 
-    let addItemBtn = document.querySelectorAll('#add-item-btn')
-
+    
+    let addItemBtn = document.querySelectorAll('.add-item-btn') 
+    
     addItemBtn.forEach((btn) => {
-        btn.addEventListener("click", function(e){
-            document.querySelector('.order-total').innerHTML = displayOrder()
-        })
-    })   
+        btn.addEventListener("click", function(e){       
+            // menuArray.forEach(function(itemName) {
+            //     console.log(itemName.name)  
+            // })
+            document.querySelector('#order-details').innerHTML = displayOrder()
+         }) 
+    })
 
 }
     
 renderOrderDetails()
     
+const removeBtn = document.getElementById('remove')
+
+if (removeBtn) {
+    removeBtn.addEventListener("click", function(){
+        console.log("hello")
+    })
+}

@@ -106,6 +106,10 @@ h1 {
 /************************
      Order Details
 ************************/
+.order-total {
+    position: relative;
+    height: 300px;
+}
 
 .order-wrapper {
     display: flex;
@@ -113,8 +117,9 @@ h1 {
     align-items: center;
 }
 
-.order-details {
+.your-order{
     text-align: center;
+    font-size: 28px;
 }
 
 .add-item-btn:hover {
@@ -125,7 +130,7 @@ h1 {
 #complete-order{
     background: #16DB99;
     color: #ffffff;
-    width: 100%;
+    width: 90%;
     height: 60px;
     padding: 10px;
     text-align: center;    
@@ -133,6 +138,11 @@ h1 {
     font-weight: 700;
     border: none;
     font-size: 16px;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 #remove {
