@@ -55,13 +55,14 @@ function displayOrder() {
     
     }
 
+    
 
 
-function renderOrderDetails(){
 
+function renderOrderDetails(){    
     
     let addItemBtn = document.querySelectorAll('.add-item-btn') 
-    
+
     addItemBtn.forEach((btn) => {
         btn.addEventListener("click", function(e){       
             // menuArray.forEach(function(itemName) {
@@ -75,10 +76,10 @@ function renderOrderDetails(){
     
 renderOrderDetails()
     
-const removeBtn = document.getElementById('remove')
+// const removeBtn = document.getElementById('remove')
 
-if (removeBtn) {
-    removeBtn.addEventListener("click", function(){
-        console.log("hello")
-    })
-}
+// if (removeBtn) {
+//     removeBtn.addEventListener("click", function(){
+//         console.log("hello")
+//     })
+// }
