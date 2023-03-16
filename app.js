@@ -1,7 +1,6 @@
 import { menuArray } from "./data.js"
 
 
-
 function renderMenu(){
     document.getElementById('menu-items').innerHTML = displayMenu()
 }
@@ -37,20 +36,24 @@ function displayMenu() {
 
 function displayOrder() {  
     
-    let orderInfo = ``
 
     
-    menuArray.forEach(function(orderItem) {
-        orderInfo += `                               
-        <div class="order-wrapper">
-            <div class="order-item">${orderItem.name}</div>
-            <button class="remove" id="remove">remove</button>
-            <div class="item price">${orderItem.price}</div>
-        </div>
-            <hr>        
-        `
-        })    
-        return orderInfo
+
+
+    // let orderInfo = ``
+
+    
+    // menuArray.forEach(function(orderItem) {
+    //     orderInfo += `                               
+    //     <div class="order-wrapper">
+    //         <div class="order-item">${orderItem.name}</div>
+    //         <button class="remove" id="remove">remove</button>
+    //         <div class="item price">${orderItem.price}</div>
+    //     </div>
+    //         <hr>        
+    //     `
+    //     })    
+    //     return orderInfo
     
     
     }
@@ -65,11 +68,8 @@ function renderOrderDetails(){
 
     addItemBtn.forEach((btn) => {
         btn.addEventListener("click", function(e){       
-            // menuArray.forEach(function(itemName) {
-            //     console.log(itemName.name)  
-            // })
-            document.querySelector('#order-details').innerHTML = displayOrder()
-         }) 
+            document.getElementById("order-details").innerHTML = e.target.id
+           }) 
     })
 
 }
