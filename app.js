@@ -23,7 +23,6 @@ function displayMenu() {
                 <div  class="item-ingredients" id="item-ingredients">${menuItem.ingredients}</div>
                 <div class="item-price" id="item-price">$${menuItem.price}</div>
             </div>
-            <button class="add-item-btn" id="${menuItem.id}">+</button>
         </div>
         <hr>
         `
@@ -34,52 +33,38 @@ function displayMenu() {
 
 // Add menu button //
 
-function displayOrder() {  
-    
+// function displayOrder() {  
+
+//     let orderInfo = ``
 
     
-
-
-    // let orderInfo = ``
-
-    
-    // menuArray.forEach(function(orderItem) {
-    //     orderInfo += `                               
-    //     <div class="order-wrapper">
-    //         <div class="order-item">${orderItem.name}</div>
-    //         <button class="remove" id="remove">remove</button>
-    //         <div class="item price">${orderItem.price}</div>
-    //     </div>
-    //         <hr>        
-    //     `
-    //     })    
-    //     return orderInfo
+//     menuArray.forEach(function(orderItem) {
+//         orderInfo += `                               
+//         <div class="order-wrapper">
+//             <div class="order-item">${orderItem.name}</div>
+//             <button class="remove" id="remove">remove</button>
+//             <div class="item price">${orderItem.price}</div>
+//         </div>
+//             <hr>        
+//         `
+//         })    
+//         return orderInfo
     
     
-    }
+//     }   
 
+
+
+// function renderOrderDetails(){    
     
+//     let addItemBtn = document.querySelectorAll('.add-item-btn') 
 
-
-
-function renderOrderDetails(){    
-    
-    let addItemBtn = document.querySelectorAll('.add-item-btn') 
-
-    addItemBtn.forEach((btn) => {
-        btn.addEventListener("click", function(e){       
-            document.getElementById("order-details").innerHTML = e.target.id
-           }) 
-    })
-
-}
-    
-renderOrderDetails()
-    
-// const removeBtn = document.getElementById('remove')
-
-// if (removeBtn) {
-//     removeBtn.addEventListener("click", function(){
-//         console.log("hello")
+//     addItemBtn.forEach((btn) => {
+//         btn.addEventListener("click", function(e){       
+//             document.getElementById("order-details").innerHTML = e.target.id
+//            }) 
 //     })
+
 // }
+    
+// renderOrderDetails()
