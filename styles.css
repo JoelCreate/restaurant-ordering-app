@@ -145,14 +145,14 @@ h1 {
     margin: auto;
 }
 
-#remove {
+.remove {
     color: #bbbbbb;
     background: none;
     font-family: 'Rokkitt', serif;
     border: none;
 }
 
-#remove:hover {
+.remove:hover {
     cursor: pointer;
     color: #cdcdcd;
 }
