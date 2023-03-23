@@ -8,9 +8,6 @@ function displayMenu() {
 
     let menuInfo = ``
 
-    let addItemBtn = document.querySelector(`[data-add-item-id="${menuItem.id}"]`)
-        addItemBtn.addEventListener("click", displayOrder)
-
     menuArray.forEach(function(menuItem) {
 
         menuInfo += `
@@ -20,8 +17,7 @@ function displayMenu() {
                 <div class="item-name" id="item-name">${menuItem.name}</div>
                 <div  class="item-ingredients" id="item-ingredients">${menuItem.ingredients}</div>
                 <div class="item-price" id="item-price">$${menuItem.price}</div>
-            </div>
-            <button class="add-item-btn" data-add-item-id="${menuItem.id}">+</button>
+            </div>            
         </div>
         <hr>
         `        
@@ -38,46 +34,59 @@ function renderMenu(){
 
 renderMenu()
 
-// Start working on code HERE!!
-const addItemBtn = document.querySelector(`[data-add-item-id="${menuItem.id}"]`)
-addItemBtn.addEventListener("click", displayOrder)
 
 
+const addItemBtn = document.getElementById('add-item-btn')
 
-function displayOrder() { 
+addItemBtn.addEventListener("click", function(e) {
+    console.log(e.target.id)
+    //let orderDetails = document.getElementById('order-details')
     
-    const orderDetails = document.getElementById('order-details')
-    const orderPizza = 0
-    const orderHamburger = 1
-    const orderBeer = 2
+    // if (e.target.id < 1) {
+    //     console.log("pizza")
+    //  } else if (e.target.id = 1) {
+    //     console.log("hamburger")
+    //  } else {
+    //     console.log("beer")
+    //  }
+})
+
+function renderAddItemBtn() {
+    let addFoodItem = ``
 
     menuArray.forEach(function(item) {
-            if(item.id === orderPizza) 
-                orderDetails.innerHTML = `
-                <div class="order-wrapper">
-                    <div class="item-name" id="item-name">${item.name}</div>
-                    <div class="remove">remove</div>
-                    <div class="item-price" id="item-price">$${item.price}</div>
-                </div
-                `
-             else if(item.id === orderHamburger) 
-                orderDetails.innerHTML = `
-                <div class="order-wrapper">
-                    <div class="item-name" id="item-name">${item.name}</div>
-                    <div class="remove">remove</div>
-                    <div class="item-price" id="item-price">$${item.price}</div>
-                </div>
-                `
-             else (item.id === orderBeer) 
-                orderDetails.innerHTML = `
-                <div class="order-wrapper">
-                    <div class="item-name" id="item-name">${item.name}</div>
-                    <div class="remove">remove</div>
-                    <div class="item-price" id="item-price">$${item.price}</div>
-                </div>
-              `
-        })
-}    
+        addFoodItem += `<button class="add-item-btn" id="${item.id}">+</button>`
+    })
+
+    addItemBtn.innerHTML = addFoodItem 
+
+}
+
+renderAddItemBtn()
+
+
+
+
+
+// function displayOrder() { 
+    
+//     const orderDetails = document.getElementById('order-details')
+//     // const orderPizza = 0
+//     // const orderHamburger = 1
+//     // const orderBeer = 2
+
+//      if(e.target.id === 0) {
+//         `<div>PIZZA</div>`
+//      } else if (e.target.id === 1) {
+//         `<div>HAMBURGER</div`
+//      } else {
+//         `<div>BEER</div>`
+//      }
+      
+// }    
+
+
+
 
 // function renderOrder() {
 //     document.getElementById('order-details').innerHTML = displayOrder()
