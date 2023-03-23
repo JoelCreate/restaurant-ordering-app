@@ -18,13 +18,11 @@ function displayMenu() {
                 <div  class="item-ingredients" id="item-ingredients">${menuItem.ingredients}</div>
                 <div class="item-price" id="item-price">$${menuItem.price}</div>
             </div>            
+            <button class="add-item-btn" data-option="${menuItem.id}">+</button>
         </div>
         <hr>
         `        
-        
-    })
-
-    
+    })    
     return menuInfo
 }
 
@@ -34,35 +32,58 @@ function renderMenu(){
 
 renderMenu()
 
+//work on showing order Details below
 
-
-const addItemBtn = document.getElementById('add-item-btn')
-
-addItemBtn.addEventListener("click", function(e) {
-    console.log(e.target.id)
-    //let orderDetails = document.getElementById('order-details')
+document.addEventListener('click', function(e) {
     
-    // if (e.target.id < 1) {
-    //     console.log("pizza")
-    //  } else if (e.target.id = 1) {
-    //     console.log("hamburger")
-    //  } else {
-    //     console.log("beer")
-    //  }
+    const orderDetails = document.getElementById('order-details')
+
+    if(e.target.dataset.option === "0"){
+       displayOrder()
+    } else if (e.target.dataset.option === "1") {
+        
+    } else {
+        
+    }
 })
 
-function renderAddItemBtn() {
-    let addFoodItem = ``
 
-    menuArray.forEach(function(item) {
-        addFoodItem += `<button class="add-item-btn" id="${item.id}">+</button>`
-    })
+function displayOrder() {  
 
-    addItemBtn.innerHTML = addFoodItem 
+    let orderInfo = ``
+    
+    menuArray.forEach(function(orderItem) {
+        orderInfo += `                               
+        <div class="order-wrapper">
+            <div class="order-item">${orderItem.name}</div>
+            <button class="remove" id="remove">remove</button>
+            <div class="item price">${orderItem.price}</div>
+        </div>
+            <hr>        
+        `
+        })    
+        return orderInfo        
+}  
 
+function renderOrder() {
+    document.getElementById('order-details').innerHTML = displayOrder()
 }
 
-renderAddItemBtn()
+renderOrder()
+
+
+// function renderAddItemBtn() {
+//     let addFoodItem = ``
+
+//     menuArray.forEach(function(item) {
+//         addFoodItem += `<button class="add-item-btn" id="${item.id}">+</button>`
+//     })
+
+//     addItemBtn.innerHTML = addFoodItem 
+
+// }
+
+// renderAddItemBtn()
 
 
 
@@ -97,27 +118,6 @@ renderAddItemBtn()
 
 
 
-// Add menu button //
-
-// function displayOrder() {  
-
-//     let orderInfo = ``
-
-    
-//     menuArray.forEach(function(orderItem) {
-//         orderInfo += `                               
-//         <div class="order-wrapper">
-//             <div class="order-item">${orderItem.name}</div>
-//             <button class="remove" id="remove">remove</button>
-//             <div class="item price">${orderItem.price}</div>
-//         </div>
-//             <hr>        
-//         `
-//         })    
-//         return orderInfo
-    
-    
-//     }   
 
 
 
