@@ -32,44 +32,122 @@ function renderMenu(){
 
 renderMenu()
 
-//work on showing order Details below
 
-document.addEventListener('click', function(e) {
-    
-    const orderDetails = document.getElementById('order-details')
+const addItemBtn = document.querySelectorAll('.add-item-btn')
 
-    if(e.target.dataset.option === "0"){
-       displayOrder()
-    } else if (e.target.dataset.option === "1") {
+addItemBtn.forEach((button) => {
+  button.addEventListener('click', displayOrder)
+}) 
+
+function displayOrder(e) { 
         
-    } else {
-        
-    }
-})
 
+    const pizza = menuArray.filter(function(item){
+        return item.name.includes("Pizza")
+    })
 
-function displayOrder() {  
+    const hamburger = menuArray.filter(function(item){
+        return item.name.includes("Hamburger")
+    })
 
-    let orderInfo = ``
-    
-    menuArray.forEach(function(orderItem) {
-        orderInfo += `                               
-        <div class="order-wrapper">
-            <div class="order-item">${orderItem.name}</div>
-            <button class="remove" id="remove">remove</button>
-            <div class="item price">${orderItem.price}</div>
+    const beer = menuArray.filter(function(item){
+        return item.name.includes("Beer")
+    })
+
+    if(e.target.dataset.option === "0") {
+        const orderDetails = `
+        <div>
+            ${pizza.map((item) => `
+            <div class="order-wrapper">
+                <div class="order-item">${item.name}</div>
+                <button class="remove" id="remove">remove</button>
+                <div class="order-item">${item.price}</div>
+            </div>`).join("")}
         </div>
-            <hr>        
         `
-        })    
-        return orderInfo        
-}  
+        document.getElementById("order-details").innerHTML += orderDetails
+    } else if(e.target.dataset.option === "1") {
+        const orderDetails = `
+        <div>
+            ${hamburger.map((item) => `
+            <div class="order-wrapper">
+                <div class="order-item">${item.name}</div>
+                <button class="remove" id="remove">remove</button>
+                <div class="order-item">${item.price}</div>
+            </div>`).join("")}
+        </div>
+        `
+        document.getElementById("order-details").innerHTML += orderDetails
+    } else {
+        const orderDetails = `
+        <div>
+            ${beer.map((item) => `
+            <div class="order-wrapper">
+                <div class="order-item">${item.name}</div>
+                <button class="remove" id="remove">remove</button>
+                <div class="order-item">${item.price}</div>
+            </div>`).join("")}
+        </div>
+        `
+        document.getElementById("order-details").innerHTML += orderDetails
+    }
 
-function renderOrder() {
-    document.getElementById('order-details').innerHTML = displayOrder()
 }
 
-renderOrder()
+
+
+// document.addEventListener('click', function(e) {
+    
+//     const orderDetails = ``
+
+//     if(e.target.dataset.option === "0"){
+
+//         const findPizza = menuArray.filter((item) => item.name === "Pizza")
+//         const 
+//         orderDetails.innerHTML = 
+       
+//     }
+
+    
+
+
+    
+
+    // if(e.target.dataset.option === "0"){
+    //     const pizza = menuArray.filter((item) => {
+    //         return item.name.includes("Pizza")
+    //     })  
+    //     orderDetails.innerHTML =`<div class="order-item">${item.name}</div> `
+        
+    // } else if (e.target.dataset.option === "1") {
+    //     //document.getElementById('order-details').innerHTML = displayOrder()
+    // } else {
+        
+    // }
+
+
+
+
+// function displayOrder() {  
+
+//     let orderInfo = ``
+    
+//     menuArray.forEach(function(orderItem) {
+//         orderInfo += `                               
+//         <div class="order-wrapper">
+//             <div class="order-item">${orderItem.name}</div>
+//             <button class="remove" id="remove">remove</button>
+//             <div class="item price">${orderItem.price}</div>
+//         </div>
+//             <hr>        
+//         `
+//         })    
+//         return orderInfo        
+// }  
+
+
+
+
 
 
 // function renderAddItemBtn() {
