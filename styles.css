@@ -79,7 +79,7 @@ h1 {
 }
 
 .item-name,
-.order-details {
+#order-details {
     font-weight: 700;
     font-size: 28px;
 }
@@ -122,6 +122,10 @@ h1 {
     font-size: 28px;
 }
 
+.order-item {
+    margin: 10px 0px;
+}
+
 .add-item-btn:hover {
     cursor: pointer;
     opacity: 0.5;
@@ -150,6 +154,7 @@ h1 {
     background: none;
     font-family: 'Rokkitt', serif;
     border: none;
+    font-size: 20px;
 }
 
 .remove:hover {

@@ -59,9 +59,10 @@ function displayOrder(e) {
         <div>
             ${pizza.map((item) => `
             <div class="order-wrapper">
-                <div class="order-item">${item.name}</div>
+                <div class="order-item">${item.name}
                 <button class="remove" id="remove">remove</button>
-                <div class="order-item">${item.price}</div>
+                </div>                
+                <div class="order-item">$${item.price}</div>
             </div>`).join("")}
         </div>
         `
@@ -71,9 +72,10 @@ function displayOrder(e) {
         <div>
             ${hamburger.map((item) => `
             <div class="order-wrapper">
-                <div class="order-item">${item.name}</div>
+                <div class="order-item">${item.name}
                 <button class="remove" id="remove">remove</button>
-                <div class="order-item">${item.price}</div>
+                </div>                
+                <div class="order-item">$${item.price}</div>
             </div>`).join("")}
         </div>
         `
@@ -83,9 +85,10 @@ function displayOrder(e) {
         <div>
             ${beer.map((item) => `
             <div class="order-wrapper">
-                <div class="order-item">${item.name}</div>
+                <div class="order-item">${item.name}
                 <button class="remove" id="remove">remove</button>
-                <div class="order-item">${item.price}</div>
+                </div>                
+                <div class="order-item">$${item.price}</div>
             </div>`).join("")}
         </div>
         `
