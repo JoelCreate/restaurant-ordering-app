@@ -39,7 +39,7 @@ h1 {
     background-color: #f5f5f5;
     margin-top:20px;
     width: 600px;
-    height: 1161px;
+    height: 1175px;
     display: flex;
     justify-items: center;
     flex-direction: column;
@@ -58,7 +58,7 @@ h1 {
 ************************/
 
 .menu-items {
-    padding: 45px 45px 0px 45px;
+    padding: 0px 45px 0px 45px;
 }
 
 .menu-wrapper {
@@ -134,7 +134,7 @@ h1 {
 #complete-order{
     background: #16DB99;
     color: #ffffff;
-    width: 90%;
+    width: 100%;
     height: 60px;
     padding: 10px;
     text-align: center;    
@@ -142,11 +142,6 @@ h1 {
     font-weight: 700;
     border: none;
     font-size: 16px;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-    margin: auto;
 }
 
 .remove {
@@ -160,5 +155,14 @@ h1 {
 .remove:hover {
     cursor: pointer;
     color: #cdcdcd;
+}
+
+.total {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#total-title {
+    margin: 20px auto;
 }
 

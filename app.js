@@ -33,14 +33,15 @@ function renderMenu(){
 renderMenu()
 
 
+//Add eventListener to all "add-item" buttons
+
 const addItemBtn = document.querySelectorAll('.add-item-btn')
 
 addItemBtn.forEach((button) => {
   button.addEventListener('click', displayOrder)
 }) 
 
-function displayOrder(e) { 
-        
+function displayOrder(e) {         
 
     const pizza = menuArray.filter(function(item){
         return item.name.includes("Pizza")
@@ -94,124 +95,7 @@ function displayOrder(e) {
         `
         document.getElementById("order-details").innerHTML += orderDetails
     }
-
 }
 
 
 
-// document.addEventListener('click', function(e) {
-    
-//     const orderDetails = ``
-
-//     if(e.target.dataset.option === "0"){
-
-//         const findPizza = menuArray.filter((item) => item.name === "Pizza")
-//         const 
-//         orderDetails.innerHTML = 
-       
-//     }
-
-    
-
-
-    
-
-    // if(e.target.dataset.option === "0"){
-    //     const pizza = menuArray.filter((item) => {
-    //         return item.name.includes("Pizza")
-    //     })  
-    //     orderDetails.innerHTML =`<div class="order-item">${item.name}</div> `
-        
-    // } else if (e.target.dataset.option === "1") {
-    //     //document.getElementById('order-details').innerHTML = displayOrder()
-    // } else {
-        
-    // }
-
-
-
-
-// function displayOrder() {  
-
-//     let orderInfo = ``
-    
-//     menuArray.forEach(function(orderItem) {
-//         orderInfo += `                               
-//         <div class="order-wrapper">
-//             <div class="order-item">${orderItem.name}</div>
-//             <button class="remove" id="remove">remove</button>
-//             <div class="item price">${orderItem.price}</div>
-//         </div>
-//             <hr>        
-//         `
-//         })    
-//         return orderInfo        
-// }  
-
-
-
-
-
-
-// function renderAddItemBtn() {
-//     let addFoodItem = ``
-
-//     menuArray.forEach(function(item) {
-//         addFoodItem += `<button class="add-item-btn" id="${item.id}">+</button>`
-//     })
-
-//     addItemBtn.innerHTML = addFoodItem 
-
-// }
-
-// renderAddItemBtn()
-
-
-
-
-
-// function displayOrder() { 
-    
-//     const orderDetails = document.getElementById('order-details')
-//     // const orderPizza = 0
-//     // const orderHamburger = 1
-//     // const orderBeer = 2
-
-//      if(e.target.id === 0) {
-//         `<div>PIZZA</div>`
-//      } else if (e.target.id === 1) {
-//         `<div>HAMBURGER</div`
-//      } else {
-//         `<div>BEER</div>`
-//      }
-      
-// }    
-
-
-
-
-// function renderOrder() {
-//     document.getElementById('order-details').innerHTML = displayOrder()
-// }
-
-// renderOrder()
-
-
-
-
-
-
-
-// function renderOrderDetails(){    
-    
-//     let addItemBtn = document.querySelectorAll('.add-item-btn') 
-
-//     addItemBtn.forEach((btn) => {
-//         btn.addEventListener("click", function(e){       
-//             document.getElementById("order-details").innerHTML = e.target.id
-//            }) 
-//     })
-
-// }
-    
-// renderOrderDetails()
