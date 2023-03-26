@@ -41,8 +41,8 @@ addItemBtn.forEach((button) => {
   button.addEventListener('click', displayOrder)
 }) 
 
-function displayOrder(e) {         
-
+function displayOrder(e) {     
+    
     const pizza = menuArray.filter(function(item){
         return item.name.includes("Pizza")
     })
@@ -55,13 +55,16 @@ function displayOrder(e) {
         return item.name.includes("Beer")
     })
 
+    const removeItemBtn = `<button class="remove" id="remove">remove</button>`
+    
+
     if(e.target.dataset.option === "0") {
-        const orderDetails = `
+        let orderDetails = `
         <div>
             ${pizza.map((item) => `
             <div class="order-wrapper">
                 <div class="order-item">${item.name}
-                <button class="remove" id="remove">remove</button>
+                    ${removeItemBtn}
                 </div>                
                 <div class="order-item">$${item.price}</div>
             </div>`).join("")}
@@ -69,33 +72,55 @@ function displayOrder(e) {
         `
         document.getElementById("order-details").innerHTML += orderDetails
     } else if(e.target.dataset.option === "1") {
-        const orderDetails = `
+        let orderDetails = `
         <div>
             ${hamburger.map((item) => `
             <div class="order-wrapper">
-                <div class="order-item">${item.name}
-                <button class="remove" id="remove">remove</button>
+                <div class="order-item">${item.name} 
+                    ${removeItemBtn}
                 </div>                
                 <div class="order-item">$${item.price}</div>
             </div>`).join("")}
         </div>
         `
-        document.getElementById("order-details").innerHTML += orderDetails
+        document.getElementById("order-details").innerHTML += orderDetails 
+              
+
     } else {
-        const orderDetails = `
+        let orderDetails = `
         <div>
             ${beer.map((item) => `
             <div class="order-wrapper">
                 <div class="order-item">${item.name}
-                <button class="remove" id="remove">remove</button>
+                   ${removeItemBtn}
                 </div>                
                 <div class="order-item">$${item.price}</div>
             </div>`).join("")}
         </div>
         `
-        document.getElementById("order-details").innerHTML += orderDetails
+        document.getElementById("order-details").innerHTML += orderDetails              
     }
+
+
+    document.querySelector('.remove').addEventListener('click', function(e) {        
+        document.getElementById("order-details").innerHTML = ``
+        
+    }) 
+    
+   
+
+    
 }
 
+
+// const removeItemBtn = document.querySelectorAll(".remove")
+
+// removeItemBtn.addEventListener("click", removeItem)
+  
+
+
+// function removeItem(e) {
+//     console.log(e.target.id)
+// }
 
 
